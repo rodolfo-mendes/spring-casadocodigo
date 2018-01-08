@@ -23,4 +23,8 @@ public class ProductDAO {
 			.createQuery("select distinct(p) from Product p join fetch p.prices", Product.class)
 			.getResultList();
 	}
+
+	public Product find(Integer id) {
+		return em.find(Product.class, id);
+	}
 }
